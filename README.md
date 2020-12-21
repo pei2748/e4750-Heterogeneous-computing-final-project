@@ -1,7 +1,27 @@
 # Acceleration of SVM algorithm on GPU using PyCuda 
 
-### Directory Explanation
-Our repository has the following structure. It has 6 subdirectories at the top level. 
+### Directory Organization
+
+Our repository has the following structure.#### Directory 3: pycuda
+
+These are PyCuda source code which implement different kernels\
+Three pycuda code for BC dataset
+
+1.) BC-cuda-lock-free.py\
+2.) BC-cuda-naive.py\
+3.) BC-cuda-shared-mem.py\
+
+Four pycuda code for Cifar-10 dataset
+
+4.) CF-cuda-naive.py
+5.) CF-cuda-lock-free.py
+6.) CF-cuda-multi-kernel.py
+7.) CF-cuda-multi-kernel-tiled.py
+
+We also have three corresponding jupyter notebooks for four Cifar-10 pycuda code excluding CF-cuda-lock-free. These three notebooks will generate figures for time and accuracy with different max_epochs, while .py files only run for one fix max_epoch.\
+
+CF-data-comparison.ipynb is to generate figures shown in our report.\
+ It has 6 subdirectories at the top level. 
 
 
 <img src="tree.png" width="400">
@@ -30,13 +50,13 @@ Three pycuda code for BC dataset
 
 1.) BC-cuda-lock-free.py\
 2.) BC-cuda-naive.py\
-3.) BC-cuda-shared-mem.py\
+3.) BC-cuda-shared-mem.py
 
 Four pycuda code for Cifar-10 dataset
 
-4.) CF-cuda-naive.py
-5.) CF-cuda-lock-free.py
-6.) CF-cuda-multi-kernel.py
+4.) CF-cuda-naive.py\
+5.) CF-cuda-lock-free.py\
+6.) CF-cuda-multi-kernel.py\
 7.) CF-cuda-multi-kernel-tiled.py
 
 We also have three corresponding jupyter notebooks for four Cifar-10 pycuda code excluding CF-cuda-lock-free. These three notebooks will generate figures for time and accuracy with different max_epochs, while .py files only run for one fix max_epoch.\
@@ -75,28 +95,28 @@ This is the kernel code used to implement SVM on cifar dataset, each thread work
 This folder contains all the nvprof files for each pycuda program. Snap-shots of profiling are stored in nvprof-result-figures/\
 
 #### Directory 5: results-plots/
-These folder contains all the figures we generate to show running time and accuracies. Some are put inside the report. Some are not.
+This folder contains all the figures we generate to show running time and accuracies. Some are put inside the report. Some are not.
+
+#### Directory 6: figures/
+
+This folder contains three images which show that we have been using google cloud for this project.
 
 
-# Commands
+### Commands to run the code.
 
-Run commands in svm/ folder.
+Run commands in pycuda/ folder and python_code/ folder.\
+To run programs in pycuda folder, you need to activate your cuda environment first.\
+If we have a jupyter notebook for a pycuda program, you can run it by command:\
+> jupyter notebook CF-cuda-multi-kernel-tiled.ipynb\
 
-Commands to run nvprovf:
+If we have only python code for a pycuda program, you can run it by command:\
+> python CF-cuda-multi-kernel-tiled.py\
 
-1, nvprof -o nvprof/BC-cuda-naive.nvprof python BC-cuda-naive.py
+To run programs in python_code folder, you use command:\
+> python train-cifar10-svm.py
 
-2, nvprof -o nvprof/BC-cuda-lock-free.nvprof python BC-cuda-lock-free.py 
-
-3, nvprof -o nvprof/BC-cuda-shared-mem.nvprof python BC-cuda-shared-mem.py 
-
-4, nvprof -o nvprof/CF-cuda-single-blk.nvprof python CF-cuda-single-blk.py 
-
-5, nvprof -o nvprof/CF-cuda-lock-free.nvprof python CF-cuda-lock-free.py
-
-Commands to view nvprof:
-viewprofile nvprof/BC-cuda-naive.nvprof
-
+Commands to reading the profiling result:\
+> viewprofile nvprof/CF-cuda-multi-kernel-tiled.nvprof
 
 
 
