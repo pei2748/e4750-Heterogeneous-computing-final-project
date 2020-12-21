@@ -1,56 +1,7 @@
 # Acceleration of SVM algorithm on GPU using PyCuda 
-.\
-├── INSTRUCTIONS.md\
-├── README.md\
-├── figures\
-│   ├── cloud-using-1.png\
-│   ├── cloud-using-2.png\
-│   └── cloud-using-3.png\
-├── kernels\
-│   ├── delta.cu\
-│   ├── ds.cu\
-│   ├── get_w_combo.cu\
-│   ├── get_w_combo_tiled.cu\
-│   ├── sgd_bc_sh_mem.cu\
-│   ├── sgd_cifar_lock_free_2.cu\
-│   ├── sgd_cifar_single_blk_normal_mult.cu\
-│   ├── sgd_kernel.cu\
-│   ├── sgd_kernel_no_locks.cu\
-│   ├── xT.cu\
-│   ├── x_dot_w.cu\
-│   └── x_dot_w_tile.cu\
-├── nvprof\
-│   ├── BC-cuda-lock-free.nvprof\
-│   ├── BC-cuda-naive.nvprof\
-│   ├── BC-cuda-shared-mem.nvprof\
-│   ├── CF-cuda-lock-free.nvprof\
-│   ├── CF-cuda-multi-kernel-tiled.nvprof\
-│   ├── CF-cuda-multi-kernel.nvprof\
-│   ├── CF-cuda-single-blk.nvprof\
-│   ├── cifar_time.nvprof\
-│   └── nvprof-result-figures/\
-├── pycuda\
-│   ├── BC-cuda-lock-free.py\
-│   ├── BC-cuda-naive.py\
-│   ├── BC-cuda-shared-mem.py\
-│   ├── CF-cuda-lock-free.py\
-│   ├── CF-cuda-multi-kernel-tiled.ipynb\
-│   ├── CF-cuda-multi-kernel-tiled.py\
-│   ├── CF-cuda-multi-kernel.ipynb\
-│   ├── CF-cuda-multi-kernel.py\
-│   ├── CF-cuda-naive.ipynb\
-│   ├── CF-cuda-naive.py\
-│   ├── CF-data-comparison.ipynb\
-│   └── data.csv\
-├── python_code\
-│   ├── data.csv\
-│   ├── svm_BC-SGD.ipynb\
-│   ├── svm_BC-SGD.py\
-│   ├── svm_BC-opencv.ipynb\
-│   ├── svm_BC-opencv.py\
-│   ├── train-cifar10-svm.ipynb\
-│   └── train-cifar10-svm.py\
-└── result-plots/\
+
+![caption](tree.png)
+
 
 
 
