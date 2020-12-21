@@ -1,7 +1,7 @@
 # Acceleration of SVM Algorithm on GPU using PyCuda 
 Authors: \
 Pratyush Agrawal, pa2562 \
-Pei Liu, pl2748\
+Pei Liu, pl2748
 ## Directory Organization
 
 Our repository has the following structure. It has 6 subdirectories at the top level. 
@@ -99,7 +99,7 @@ To run programs in python_code folder, you use command:\
 > python train-cifar10-svm.py
 
 Commands to reading the profiling result:\
-In nvprof/ folder, \
+In nvprof/ folder, 
 > viewprofile CF-cuda-multi-kernel-tiled.nvprof
 
 
