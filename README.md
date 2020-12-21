@@ -1,32 +1,13 @@
-# Acceleration of SVM algorithm on GPU using PyCuda 
+# Acceleration of SVM Algorithm on GPU using PyCuda 
 
-### Directory Organization
+## Directory Organization
 
-Our repository has the following structure.#### Directory 3: pycuda
-
-These are PyCuda source code which implement different kernels\
-Three pycuda code for BC dataset
-
-1.) BC-cuda-lock-free.py\
-2.) BC-cuda-naive.py\
-3.) BC-cuda-shared-mem.py\
-
-Four pycuda code for Cifar-10 dataset
-
-4.) CF-cuda-naive.py
-5.) CF-cuda-lock-free.py
-6.) CF-cuda-multi-kernel.py
-7.) CF-cuda-multi-kernel-tiled.py
-
-We also have three corresponding jupyter notebooks for four Cifar-10 pycuda code excluding CF-cuda-lock-free. These three notebooks will generate figures for time and accuracy with different max_epochs, while .py files only run for one fix max_epoch.\
-
-CF-data-comparison.ipynb is to generate figures shown in our report.\
- It has 6 subdirectories at the top level. 
+Our repository has the following structure. It has 6 subdirectories at the top level. 
 
 
 <img src="tree.png" width="400">
 
-#### Directory 1: python_code/
+### Directory 1: python_code/
 
 This directory contains 3 files:
 
@@ -43,7 +24,7 @@ OpenCV library implementation of svm on BC dataset
  Python implementation of sgd on cifar 10 dataset
 
 
-#### Directory 2: pycuda/
+### Directory 2: pycuda/
 
 These are PyCuda source code which implement different kernels\
 Three pycuda code for BC dataset
@@ -59,12 +40,12 @@ Four pycuda code for Cifar-10 dataset
 6.) CF-cuda-multi-kernel.py\
 7.) CF-cuda-multi-kernel-tiled.py
 
-We also have three corresponding jupyter notebooks for four Cifar-10 pycuda code excluding CF-cuda-lock-free. These three notebooks will generate figures for time and accuracy with different max_epochs, while .py files only run for one fix max_epoch.\
+We also have three corresponding jupyter notebooks for four Cifar-10 pycuda code excluding CF-cuda-lock-free. These three notebooks will generate figures for time and accuracy with different max_epochs, while .py files only run for one fix max_epoch.
 
-CF-data-comparison.ipynb is to generate figures shown in our report.\
+CF-data-comparison.ipynb is to generate figures shown in our report.
 
 
-#### Directory 3: kernels/ 
+### Directory 3: kernels/ 
 
 This diectory contains the cuda kernels to be executed on GPU for Breast-Cancer and CiFAR-10 dataset.\
 1.) sgd_kerne.cu \
@@ -86,31 +67,31 @@ This is the kernel code used to implement SVM on cifar dataset, each thread work
   These 5 kernels work for the CF-cuda-multi-kernel.py pycuda Program.
   
 7.) x_dot_w_tile.cu, xT.cu, ds.cu, delta.cu, get_w_combo_tiled.cu \
-  These 5 kernels work for the CF-cuda-multi-kernel-tiled.py pycuda Program.\
+  These 5 kernels work for the CF-cuda-multi-kernel-tiled.py pycuda Program.
 
 
 
-#### Directory 4: nvprof/
+### Directory 4: nvprof/
 
-This folder contains all the nvprof files for each pycuda program. Snap-shots of profiling are stored in nvprof-result-figures/\
+This folder contains all the nvprof files for each pycuda program. Snap-shots of profiling are stored in nvprof-result-figures/
 
-#### Directory 5: results-plots/
+### Directory 5: results-plots/
 This folder contains all the figures we generate to show running time and accuracies. Some are put inside the report. Some are not.
 
-#### Directory 6: figures/
+### Directory 6: figures/
 
 This folder contains three images which show that we have been using google cloud for this project.
 
 
-### Commands to run the code.
+## Commands
 
 Run commands in pycuda/ folder and python_code/ folder.\
 To run programs in pycuda folder, you need to activate your cuda environment first.\
 If we have a jupyter notebook for a pycuda program, you can run it by command:\
-> jupyter notebook CF-cuda-multi-kernel-tiled.ipynb\
+> jupyter notebook CF-cuda-multi-kernel-tiled.ipynb
 
 If we have only python code for a pycuda program, you can run it by command:\
-> python CF-cuda-multi-kernel-tiled.py\
+> python CF-cuda-multi-kernel-tiled.py
 
 To run programs in python_code folder, you use command:\
 > python train-cifar10-svm.py
