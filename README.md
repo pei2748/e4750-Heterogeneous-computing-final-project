@@ -1,5 +1,7 @@
 # Acceleration of SVM Algorithm on GPU using PyCuda 
-
+Authors: \
+Pratyush Agrawal, pa2562 \
+Pei Liu, pl2748\
 ## Directory Organization
 
 Our repository has the following structure. It has 6 subdirectories at the top level. 
@@ -9,7 +11,7 @@ Our repository has the following structure. It has 6 subdirectories at the top l
 
 ### Directory 1: python_code/
 
-This directory contains 3 files:
+This directory contains four files:
 
 1.) data.csv\
 This is the Breast cancer dataset, which will be read by all .py files whose name containing "BC"
@@ -97,7 +99,8 @@ To run programs in python_code folder, you use command:\
 > python train-cifar10-svm.py
 
 Commands to reading the profiling result:\
-> viewprofile nvprof/CF-cuda-multi-kernel-tiled.nvprof
+In nvprof/ folder, \
+> viewprofile CF-cuda-multi-kernel-tiled.nvprof
 
 
 
