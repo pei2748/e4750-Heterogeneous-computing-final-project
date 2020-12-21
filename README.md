@@ -89,13 +89,13 @@ This folder contains three images which show that we have been using google clou
 
 Run commands in pycuda/ folder and python_code/ folder.\
 To run programs in pycuda folder, you need to activate your cuda environment first.\
-If we have a jupyter notebook for a pycuda program, you can run it by command:\
+If we have a jupyter notebook for a pycuda program, you can run it by command:
 > jupyter notebook CF-cuda-multi-kernel-tiled.ipynb
 
-If we have only python code for a pycuda program, you can run it by command:\
+If we have only python code for a pycuda program, you can run it by command:
 > python CF-cuda-multi-kernel-tiled.py
 
-To run programs in python_code folder, you use command:\
+To run programs in python_code folder, you use command:
 > python train-cifar10-svm.py
 
 Commands to reading the profiling result:\
